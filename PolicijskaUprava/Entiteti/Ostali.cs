@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PolicijskaUprava.Entiteti
+{
+	public class Ostali : Policajac
+	{
+		public virtual int ID { get; set; }
+		public virtual int Redni_br_patrole { get; set; }
+
+		public Ostali()
+		{
+
+		}
+	}
+}
