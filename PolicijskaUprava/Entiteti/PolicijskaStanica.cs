@@ -14,6 +14,8 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Naziv { get; set; }
 		public virtual DateTime Datum_osnivanja { get; set; }
 		public virtual int ID_Sefa { get; set; }
+        public virtual Policajac SefStanice { get; set; }
+        public virtual Policajac ZamenikStanice { get; set; }
 		public virtual int ID_Zamenika { get; set; }
 		public virtual int ID_Uprave { get; set; }
 

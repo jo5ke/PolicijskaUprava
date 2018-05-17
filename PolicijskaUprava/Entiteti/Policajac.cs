@@ -28,6 +28,8 @@ namespace PolicijskaUprava.Entiteti
         public virtual Ustanova PripadaUstanovi { get; set; }
 
         public virtual PolicijskaStanica RadiUStanici { get; set; }
+        public virtual PolicijskaStanica PolicijskaStanicaZamenika { get; set; }
+        public virtual PolicijskaStanica PolicijskaStanicaSefa { get; set; }
 
         public virtual Cin ImaCin { get; set; }
 
