@@ -20,6 +20,8 @@ namespace PolicijskaUprava.Entiteti
 
         public virtual Objekat InterveniseObjekat { get; set; }
 
+		public virtual IList<Ostali> Radnici { get; set; }
+
 
         public Patrola()
 		{

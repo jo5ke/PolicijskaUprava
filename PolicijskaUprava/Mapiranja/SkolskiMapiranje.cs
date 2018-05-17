@@ -14,9 +14,9 @@ namespace PolicijskaUprava.Mapiranja
         {
             Table("SKOLSKI");
 
-            Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+            
 
-            Map(x => x.ID_Skole, "ID_SKOLE");
+        
 
             References(x => x.RadiUSkoli).Column("ID_SKOLE").LazyLoad();
 

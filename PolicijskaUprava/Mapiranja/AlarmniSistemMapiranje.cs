@@ -25,9 +25,8 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_Atesta, "DATUM_ATESTA");
 			Map(x => x.Datum_Poslednjeg_Atesta, "DATUM_POSLEDNJEG_ATESTA");
 
-            //HasMany(x => x.listaNezeljenihEfekata).KeyColumn("ID_LEKA").Cascade.All();
-
-            HasOne(x => x.TehnickoLice).PropertyRef(x => x.Serijski_br_alarma);
+			//HasMany(x => x.listaNezeljenihEfekata).KeyColumn("ID_LEKA").Cascade.All();
+			References(x => x.TehnickoLice).Column("SERIJSKI_BR_ALARMA").Unique();
 
 
             References(x => x.ObjekatInstaliran).Column("SERIJSKI_BR_ALARMA").Unique();

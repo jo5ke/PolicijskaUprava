@@ -19,12 +19,12 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Reg_oznaka_vozila, "REG_OZNAKA_VOZILA");
 			Map(x => x.Vreme, "VREME");
 			Map(x => x.Opis, "OPIS");
-			Map(x => x.ID_Vodje, "ID_VODJE");
-			Map(x => x.ID_Objekta, "ID_OBJEKTA");
+		
 
             References(x => x.InterveniseObjekat).Column("ID_OBJEKTA");
             HasOne(x => x.Vodja).PropertyRef(x => x.PatrolaVodje);
             HasOne(x => x.VoziloPatrole).PropertyRef(x => x.VoziVozilo);
+			HasMany(x => x.Radnici).KeyColumn("ID_PATROLE").LazyLoad().Cascade.All();
 
 
         }

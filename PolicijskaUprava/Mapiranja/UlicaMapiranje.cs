@@ -13,8 +13,7 @@ namespace PolicijskaUprava.Mapiranja
         public UlicaMapiranje()
         {
             Table("ULICA");
-
-            Map(x => x.ID_Policajca, "ID_POLICAJCA");
+			
             Map(x => x.Ulica_naziv, "ULICA_NAZIV");
             
 
