@@ -26,8 +26,15 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_diplomiranja, "DATUM_DIPLOMIRANJA");
 			Map(x => x.Datum_unapredjenja, "DATUM_UNAPREDJENJA");
 			Map(x => x.Oblast, "OBLAST");
-			
 
-		}
-	}
+            References(x => x.JeZamenikUprave).Column("ID_UPRAVE");
+
+            References(x => x.PripadaUstanovi).Column("ID_USTANOVE");
+            References(x => x.ImaCin).Column("ID_CINA");
+            References(x => x.RadiUStanici).Column("ID_STANICE");
+
+
+
+        }
+    }
 }

@@ -10,10 +10,14 @@ namespace PolicijskaUprava.Entiteti
 	{
 		public virtual int ID { get; set; }
 		public virtual string Naziv_cina { get; set; }
+        public virtual IList<Policajac> Policajci { get; set; }
 
-		public Cin()
+
+        public Cin()
 		{
+            Policajci = new List<Policajac>();
 
-		}
-	}
+
+        }
+    }
 }

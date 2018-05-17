@@ -24,7 +24,16 @@ namespace PolicijskaUprava.Entiteti
 		public virtual int ID_Uprave { get; set; }
 		public virtual int ID_Stanice { get; set; }
 
-		public Policajac()
+        public virtual Uprava JeZamenikUprave { get; set; }
+        public virtual Ustanova PripadaUstanovi { get; set; }
+
+        public virtual PolicijskaStanica RadiUStanici { get; set; }
+
+        public virtual Cin ImaCin { get; set; }
+
+
+
+        public Policajac()
 		{
 
 		}

@@ -19,6 +19,11 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Grad, "GRAD");
 			Map(x => x.ID_Nacelnika, "ID_NACELNIKA");
 
-		}
-	}
+            HasMany(x => x.PolicijskeStanice).KeyColumn("ID_UPRAVE").LazyLoad().Cascade.All();
+            HasMany(x => x.Policajci).KeyColumn("ID_UPRAVE").LazyLoad().Cascade.All();
+
+
+
+        }
+    }
 }

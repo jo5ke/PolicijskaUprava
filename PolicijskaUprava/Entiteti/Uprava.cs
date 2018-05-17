@@ -12,9 +12,15 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Grad { get; set; }
 		public virtual int ID_Nacelnika { get; set; }
 
-		public Uprava()
-		{
+        public virtual IList<PolicijskaStanica> PolicijskeStanice { get; set; } 
+        public virtual IList<Policajac> Policajci { get; set; } 
 
-		}
-	}
+
+        public Uprava()
+		{
+            PolicijskeStanice = new List<PolicijskaStanica>();
+            Policajci = new List<Policajac>();
+
+        }
+    }
 }

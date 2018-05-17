@@ -16,8 +16,10 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Opis_servisiranja { get; set; }
 		public virtual DateTime Datum_Atesta { get; set; }
 		public virtual DateTime Datum_Poslednjeg_Atesta { get; set; }
+        
 
-		public AlarmniSistem()
+
+        public AlarmniSistem()
 		{
 
 		}

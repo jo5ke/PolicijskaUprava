@@ -24,9 +24,10 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_Atesta, "DATUM_ATESTA");
 			Map(x => x.Datum_Poslednjeg_Atesta, "DATUM_POSLEDNJEG_ATESTA");
 
-		}
 
-		class AlarmniSistemToplotniMapiranja : SubclassMap<Toplotni>
+        }
+
+        class AlarmniSistemToplotniMapiranja : SubclassMap<Toplotni>
 		{
 			public AlarmniSistemToplotniMapiranja()
 			{

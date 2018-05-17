@@ -15,8 +15,10 @@ namespace PolicijskaUprava.Entiteti
 		public virtual int ID_Objekta { get; set; }
 		public virtual DateTime Vreme { get; set; }
 		public virtual string Opis { get; set; }
+        public virtual Objekat InterveniseObjekat { get; set; }
 
-		public Patrola()
+
+        public Patrola()
 		{
 
 		}

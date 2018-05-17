@@ -15,11 +15,15 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Adresa { get; set; }
 		public virtual string Ime { get; set; }
 		public virtual string Prezime { get; set; }
+        public virtual IList<Skolski> Skolski { get; set; }
 
-		public Skola()
+
+        public Skola()
 		{
+            Skolski = new List<Skolski>();
 
-		}
 
-	}
+        }
+
+    }
 }

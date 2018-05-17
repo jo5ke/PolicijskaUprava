@@ -19,10 +19,17 @@ namespace PolicijskaUprava.Entiteti
 		public virtual DateTime Datum_instalacije { get; set; }
 		public virtual int ID_Stanice { get; set; }
 
-		public Objekat()
-		{
-			
-		}
+        public virtual PolicijskaStanica NadzireStanica { get; set; }
 
-	}
+        public virtual IList<Patrola> Patrole { get; set; } //proveritiiiii
+
+
+
+        public Objekat()
+		{
+            Patrole = new List<Patrola>();
+
+        }
+
+    }
 }

@@ -17,9 +17,10 @@ namespace PolicijskaUprava.Mapiranja
 			Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
 
 			Map(x => x.Naziv_cina, "NAZIV_CINA");
-			
+
+            HasMany(x => x.Policajci).KeyColumn("ID_CINA").LazyLoad().Cascade.All();
 
 
-		}
-	}
+        }
+    }
 }

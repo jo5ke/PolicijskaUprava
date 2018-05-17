@@ -26,7 +26,12 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_instalacije, "DATUM_INSTALACIJE");
 			Map(x => x.ID_Stanice, "ID_STANICE");
 
+            References(x => x.NadzireStanica).Column("ID_STANICE");
+            HasMany(x => x.Patrole).KeyColumn("ID_OBJEKTA").LazyLoad().Cascade.All();
 
-		}
-	}
+
+
+
+        }
+    }
 }

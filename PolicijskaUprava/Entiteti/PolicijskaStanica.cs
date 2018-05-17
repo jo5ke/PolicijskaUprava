@@ -17,10 +17,24 @@ namespace PolicijskaUprava.Entiteti
 		public virtual int ID_Zamenika { get; set; }
 		public virtual int ID_Uprave { get; set; }
 
-		public PolicijskaStanica()
+        public virtual IList<Objekat> Objekti { get; set; } //proveritiiiii
+        public virtual IList<Policajac> Policajci { get; set; } //proveritiiiii
+        public virtual Uprava PripadaUpravi { get; set; }
+        public virtual IList<Vozilo> Vozila { get; set; } //proveritiiiii
+
+
+
+
+        public PolicijskaStanica()
 		{
+            Objekti = new List<Objekat>();
+            Policajci = new List<Policajac>();
+            Vozila = new List<Vozilo>();
 
-		}
 
-	}
+
+
+        }
+
+    }
 }

@@ -10,6 +10,7 @@ namespace PolicijskaUprava.Entiteti
 	{
 		public virtual int ID { get; set; }
 		public virtual int ID_Skole { get; set; }
+        public virtual Skola RadiUSkoli { get;  set}
 		public Skolski()
 		{
 
