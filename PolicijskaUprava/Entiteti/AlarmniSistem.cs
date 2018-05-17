@@ -14,6 +14,7 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Proizvodjac { get; set; }
 		public virtual string Model { get; set; }
 		public virtual string Opis_servisiranja { get; set; }
+        public virtual string Tip { get; set; }
 		public virtual DateTime Datum_Atesta { get; set; }
 		public virtual DateTime Datum_Poslednjeg_Atesta { get; set; }
         public virtual Objekat ObjekatInstaliran { get; set; }
@@ -29,7 +30,7 @@ namespace PolicijskaUprava.Entiteti
 
 	public class Toplotni : AlarmniSistem
 	{
-		public virtual int Horiznotnalna_rez { get; set; }
+		public virtual int Horizontalna_rez { get; set; }
 		public virtual int Vertikalna_rez { get; set; }
 
 		public Toplotni()
