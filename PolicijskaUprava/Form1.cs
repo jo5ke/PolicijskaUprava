@@ -303,7 +303,7 @@ namespace PolicijskaUprava
                     Model="",
                     Proizvodjac="",
                     //Godina_proizvodnje=
-                    Horiznotnalna_rez=3,
+                    Horizontalna_rez=3,
                     Vertikalna_rez=3,
 
                 };
@@ -412,8 +412,8 @@ namespace PolicijskaUprava
                     Opis_servisiranja = "",
                     Model = "",
                     Proizvodjac = "",
-                    //Godina_proizvodnje=
-                    Horiznotnalna_rez = 3,
+					//Godina_proizvodnje=
+					Horizontalna_rez = 3,
                     Vertikalna_rez = 3,
                 };
 
