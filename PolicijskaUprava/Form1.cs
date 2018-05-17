@@ -28,9 +28,13 @@ namespace PolicijskaUprava
 
 
                 Entiteti.Uprava u = new Entiteti.Uprava();
+				Policajac p = s.Load<Policajac>(1);
+				MessageBox.Show(p.Licno_ime);
+				u.ID_Nacelnika = p.ID;
 
-              
-                u.Grad = "Nis";
+
+
+				u.Grad = "Nis";
                 
 
                 s.Save(u);
@@ -49,25 +53,20 @@ namespace PolicijskaUprava
             {
                 ISession s = DataLayer.GetSession();
 
-                Entiteti.Uprava u = new Entiteti.Uprava()
-                {
-                    Grad = "Nis",
-                    
-                };
+				Uprava u = s.Load<Uprava>(1);
+				Policajac sef = s.Load<Policajac>(5);
+				Policajac zamenik = s.Load<Policajac>(6);
 
-                PolicijskaStanica p = new PolicijskaStanica()
-                {
-                    Naziv = "blbla",
-                    Adresa = "fdsf",
-                    Opstina = "ddd",
-                   // Datum_osnivanja = 
-                };
+				PolicijskaStanica p = new PolicijskaStanica();
+				p.Naziv = "Stanica Pirot";
+				p.Adresa = "Dusanova";
+				p.Opstina = "Pantelej";
+				p.Datum_osnivanja = DateTime.Now;
+				p.ID_Sefa = sef.ID;
+				p.ID_Uprave = u.ID;
+				p.ID_Zamenika = zamenik.ID;
 
-              
-
-
-
-                s.Save(u);
+                
 
                 p.PripadaUpravi = u;
                 s.Save(p);
@@ -76,7 +75,9 @@ namespace PolicijskaUprava
 
                 u.PolicijskeStanice.Add(p);
 
-                s.Save(u);
+				s.Save(u);
+				s.Flush();
+				s.Close();
 
             }
             catch (Exception ec)
