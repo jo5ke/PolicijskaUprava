@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer.cs" />
     <Compile Include="Entiteti\AlarmniSistem.cs" />
     <Compile Include="Entiteti\Cin.cs" />
     <Compile Include="Entiteti\Objekat.cs" />
@@ -98,6 +99,13 @@
     <Compile Include="Mapiranja\PolicajacMapiranje.cs" />
     <Compile Include="Mapiranja\PolicijskaStanicaMapiranje.cs" />
     <Compile Include="Mapiranja\UpravaMapiranje.cs" />
+    <Compile Include="Mapiranja\SkolaMapiranje.cs" />
+    <Compile Include="Mapiranja\SkolskiMapiranje.cs" />
+    <Compile Include="Mapiranja\TehnickoLiceMapiranje.cs" />
+    <Compile Include="Mapiranja\UlicaMapiranje.cs" />
+    <Compile Include="Mapiranja\UstanovaMapiranje.cs" />
+    <Compile Include="Mapiranja\VanredneSituacijeMapiranja.cs" />
+    <Compile Include="Mapiranja\VoziloMapiranje.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
