@@ -13,6 +13,8 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Tip { get; set; }
         public virtual string Model { get; set; } //ne znam sto niste nap
         public virtual string Proizvodjac { get; set; } //isto
+
+
         public virtual Patrola VoziVozilo { get; set; }
 
         public virtual PolicijskaStanica PosedujeStanica { get; set; }
