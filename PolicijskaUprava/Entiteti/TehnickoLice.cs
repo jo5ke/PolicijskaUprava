@@ -9,12 +9,16 @@ namespace PolicijskaUprava.Entiteti
 	public class TehnickoLice
 	{
 		// id?
-		public virtual int Serijski_br_alarma { get; set; }
+		public virtual AlarmniSistem Serijski_br_alarma { get; set; }
 		public virtual string Ime { get; set; }
 	
 		public TehnickoLice()
 		{
 
 		}
-	}
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+    }
 }

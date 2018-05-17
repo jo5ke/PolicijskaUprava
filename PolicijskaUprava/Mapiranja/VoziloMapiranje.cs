@@ -23,7 +23,7 @@ namespace PolicijskaUprava.Mapiranja
             Map(x => x.Proizvodjac, "PROIZVODJAC");
 
             References(x => x.PosedujeStanica).Column("ID_STANICE");
-
+            References(x => x.VoziVozilo).Column("REG_OZNAKA_VOZILA").Unique();
 
         }
     }

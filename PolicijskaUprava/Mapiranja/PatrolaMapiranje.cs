@@ -23,6 +23,8 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.ID_Objekta, "ID_OBJEKTA");
 
             References(x => x.InterveniseObjekat).Column("ID_OBJEKTA");
+            HasOne(x => x.Vodja).PropertyRef(x => x.PatrolaVodje);
+            HasOne(x => x.VoziloPatrole).PropertyRef(x => x.VoziVozilo);
 
 
         }

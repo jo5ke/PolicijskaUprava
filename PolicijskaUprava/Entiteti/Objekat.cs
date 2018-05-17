@@ -18,6 +18,7 @@ namespace PolicijskaUprava.Entiteti
 		public virtual int Serijski_br_alarma { get; set; }
 		public virtual DateTime Datum_instalacije { get; set; }
 		public virtual int ID_Stanice { get; set; }
+        public virtual AlarmniSistem InstaliranAlarmniSis { get; set; }
 
         public virtual PolicijskaStanica NadzireStanica { get; set; }
 

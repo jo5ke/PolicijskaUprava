@@ -11,6 +11,7 @@ namespace PolicijskaUprava.Entiteti
 		public virtual int ID { get; set; }
 		public virtual string Grad { get; set; }
 		public virtual int ID_Nacelnika { get; set; }
+        public virtual Policajac NacelnikUprave { get; set;  }
 
         public virtual IList<PolicijskaStanica> PolicijskeStanice { get; set; } 
         public virtual IList<Policajac> Policajci { get; set; } 
