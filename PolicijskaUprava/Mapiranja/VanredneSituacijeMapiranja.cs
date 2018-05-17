@@ -8,13 +8,13 @@ using PolicijskaUprava.Entiteti;
 
 namespace PolicijskaUprava.Mapiranja
 {
-    class VanredneSituacijeMapiranje : ClassMap<PolicijskaUprava.Entiteti.VanredneSituacije>
+    class VanredneSituacijeMapiranje : SubclassMap<PolicijskaUprava.Entiteti.VanredneSituacije>
     {
         public VanredneSituacijeMapiranje()
         {
             Table("VANREDNE_SITUACIJE");
-
-            Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+			DiscriminatorValue(2);
+			
 
             Map(x => x.Naziv_vestine, "NAZIV_VESTINE");
             Map(x => x.Kurs, "KURS");

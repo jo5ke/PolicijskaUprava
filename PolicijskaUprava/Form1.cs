@@ -20,32 +20,6 @@ namespace PolicijskaUprava
 			InitializeComponent();
 		}
 
-        private void cmdCreate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ISession s = DataLayer.GetSession();
-
-
-                Entiteti.Uprava u = new Entiteti.Uprava();
-				Policajac p = s.Load<Policajac>(1);
-				MessageBox.Show(p.Licno_ime);
-				u.ID_Nacelnika = p.ID;
-
-
-
-				u.Grad = "Nis";
-                
-
-                s.Save(u);
-                s.Flush();
-                s.Close();
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
-        }
 
         private void cmdCreatePolicijskaStanica_Click(object sender, EventArgs e)
         {
@@ -108,7 +82,7 @@ namespace PolicijskaUprava
                     Datum_unapredjenja = DateTime.Now,
                     ID_Ustanove = ustanova.ID,
                     ID_Stanice = stanica.ID,
-                    ID_Cina = cin.ID;
+                    ID_Cina = cin.ID
                     
 
                   
@@ -116,66 +90,14 @@ namespace PolicijskaUprava
 
 
                 
-                s.Save(p);
+                s.Save(pol);
 
-                pol.RadiUStanici = p;
+                pol.RadiUStanici = stanica;
                 s.Save(pol);
                 
-                p.Policajci.Add(pol);
+                stanica.Policajci.Add(pol);
 
-                s.Save(p);
-
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
-        }
-
-        private void cmdCreateVozilo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ISession s = DataLayer.GetSession();
-
-                Entiteti.PolicijskaStanica p = new Entiteti.PolicijskaStanica()
-                {
-                    Naziv = "blbla",
-                    Adresa = "fdsf",
-                    Opstina = "ddd",
-                    // Datum_osnivanja = 
-
-                };
-
-                Entiteti.Patrola pat = new Entiteti.Patrola()
-                {
-                    //Vreme=
-                    Opis = "",
-
-                };
-
-                Vozilo v = new Vozilo()
-                {
-                    Reg_oznaka = "",
-                    Boja = "",
-                    Tip="",
-                    Model="",
-                    Proizvodjac="",
-
-                };
-
-               
-                s.Save(p);
-
-                v.PosedujeStanica = p;
-                v.VoziVozilo = pat;
-                s.Save(v);
-                s.Save(pat);
-
-                p.Vozila.Add(v);
-                pat.VoziloPatrole=v;
-                
-                s.Save(p);
+                s.Save(stanica);
 
             }
             catch (Exception ec)
@@ -184,178 +106,83 @@ namespace PolicijskaUprava
             }
         }
 
-        private void cmdCreatePatrola_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ISession s = DataLayer.GetSession();
-
-                Entiteti.Objekat o = new Entiteti.Objekat()
-                {
-                    Tip = "",
-                    Adresa = "",
-                    Povrsina = 8,
-                    Ime = "",
-                    Prezime = "",
-                    Br_telefona = 3,
-                    Serijski_br_alarma = 5,
-                    //Datum_instalacije=
-
-                };
-
-                Patrola pat = new Patrola()
-                {
-                    //Vreme=
-                    Opis = "",
-
-                };
-
-
-
-                s.Save(o);
-
-                pat.InterveniseObjekat = o;
-                s.Save(pat);
-
-                o.Patrole.Add(pat);
-
-                s.Save(o);
-
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
-        }
-
-        private void cmdCreateObjekat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ISession s = DataLayer.GetSession();
-
-                Entiteti.PolicijskaStanica p = new Entiteti.PolicijskaStanica()
-                {
-                    Naziv = "blbla",
-                    Adresa = "fdsf",
-                    Opstina = "ddd",
-                    // Datum_osnivanja = 
-
-                };
-
-                Objekat o = new Objekat()
-                {
-                    Tip = "",
-                    Adresa = "",
-                    Povrsina = 8,
-                    Ime = "",
-                    Prezime = "",
-                    Br_telefona = 3,
-                    Serijski_br_alarma = 5,
-                    //Datum_instalacije=
-                    
-                };
-
-
-
-                s.Save(p);
-
-                o.NadzireStanica= p;
-                s.Save(o);
-
-                p.Objekti.Add(o);
-
-                s.Save(p);
-
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
-        }
+     
 
         private void cmdCreateAlarmniSistem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ISession s = DataLayer.GetSession();
+			try
+			{
+				ISession s = DataLayer.GetSession();
 
-                Entiteti.Objekat o = new Entiteti.Objekat()
-                {
-                    Tip = "",
-                    Adresa = "",
-                    Povrsina = 8,
-                    Ime = "",
-                    Prezime = "",
-                    Br_telefona = 3,
-                    Serijski_br_alarma = 5,
-                    //Datum_instalacije=
+				Objekat o = s.Load<Objekat>(2);
+				TehnickoLice lice = s.Load<TehnickoLice>(1);
 
-                };
+				Toplotni t = new Toplotni()
+				{
+					Datum_Atesta = DateTime.Now,
+					Datum_Poslednjeg_Atesta = DateTime.Now,
+					Opis_servisiranja = "Kvar",
+					Model = "Cz67zS",
+					Proizvodjac = "Samsung",
+					Godina_proizvodnje = 1998,
+					Tip = "Toplotni",
+					Horizontalna_rez = 3,
+					Vertikalna_rez = 3,
 
-                Toplotni t = new Toplotni()
-                {
-                    //Datum_Atesta=
-                    //Datum_Poslednjeg_Atesta=
-                    Opis_servisiranja="",
-                    Model="",
-                    Proizvodjac="",
-                    //Godina_proizvodnje=
-                    Horizontalna_rez=3,
-                    Vertikalna_rez=3,
 
-                };
 
-                Pokretni p = new Pokretni()
-                {
-                    //Datum_Atesta=
-                    //Datum_Poslednjeg_Atesta=
-                    Opis_servisiranja = "",
-                    Model = "",
-                    Proizvodjac = "",
-                    //Godina_proizvodnje=
-                    Tezina=5,
+				};
 
-                };
+				Pokretni p = new Pokretni()
+				{
+					Datum_Atesta = DateTime.Now,
+					Datum_Poslednjeg_Atesta = DateTime.Now,
+					Opis_servisiranja = "Kvar",
+					Model = "A53ujz",
+					Proizvodjac = "Samsung",
+					Godina_proizvodnje = 1996,
+					Tezina = 5,
 
-                Ultrazvucni u = new Ultrazvucni()
-                {
-                    //Datum_Atesta=
-                    //Datum_Poslednjeg_Atesta=
-                    Opis_servisiranja = "",
-                    Model = "",
-                    Proizvodjac = "",
-                    //Godina_proizvodnje=
-                    Frekvencija=5,
+				};
 
-                };
+				Ultrazvucni u = new Ultrazvucni()
+				{
+					Datum_Atesta = DateTime.Now,
+					Datum_Poslednjeg_Atesta = DateTime.Now,
+					Opis_servisiranja = "Kvar",
+					Model = "H87kfd",
+					Proizvodjac = "Samsung",
+					Godina_proizvodnje = 1999,
+					Frekvencija = 5,
+
+				};
 
 
 
 
 
-                s.Save(o);
+				s.Save(o);
 
-                t.ObjekatInstaliran = o;
-                s.Save(t);
-                o.InstaliranAlarmniSis=t;
+				t.ObjekatInstaliran = o;
+				s.Save(t);
+				o.InstaliranAlarmniSis = t;
 
-                p.ObjekatInstaliran = o;
-                s.Save(p);
-                o.InstaliranAlarmniSis = p;
+				p.ObjekatInstaliran = o;
+				s.Save(p);
+				o.InstaliranAlarmniSis = p;
 
-                u.ObjekatInstaliran = o;
-                s.Save(u);
-                o.InstaliranAlarmniSis = u;
+				u.ObjekatInstaliran = o;
+				s.Save(u);
+				o.InstaliranAlarmniSis = u;
 
-                s.Save(o);
+				s.Save(o);
 
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
-        }
+			}
+			catch (Exception ec)
+			{
+				MessageBox.Show(ec.Message);
+			}
+		}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -400,24 +227,31 @@ namespace PolicijskaUprava
             {
                 ISession s = DataLayer.GetSession();
 
-                Entiteti.Objekat u = s.Load<Entiteti.Objekat>(61);
+                Entiteti.Objekat u = s.Load<Entiteti.Objekat>(2);
 
-                //kolona TIP automatski dobija vrednost DO5
+              
                 Toplotni t = new Toplotni()
                 {
-                    //Datum_Atesta=
-                    //Datum_Poslednjeg_Atesta=
-                    Opis_servisiranja = "",
-                    Model = "",
+                    Datum_Atesta=DateTime.Now,
+                    Datum_Poslednjeg_Atesta=DateTime.Now,
+					Tip="Toplotni",
+                    Opis_servisiranja = "Kvar",
+                    Model = "G6557j",
                     Proizvodjac = "",
-					//Godina_proizvodnje=
+					Godina_proizvodnje=1990,
 					Horizontalna_rez = 3,
                     Vertikalna_rez = 3,
                 };
 
                 s.Save(t);
+				t.ObjekatInstaliran = u;
+				s.Save(t);
+				u.InstaliranAlarmniSis=t;
+
+				s.Save(u);
 
                 s.Close();
+				
 
 
 
@@ -434,7 +268,7 @@ namespace PolicijskaUprava
             {
                 ISession s = DataLayer.GetSession();
 
-                //Ucitavaju se podaci o policijskoj upravi sa zadatim brojem
+                
                 PolicijskaUprava.Entiteti.Uprava u = s.Load<PolicijskaUprava.Entiteti.Uprava>(61);
 
                 foreach (PolicijskaStanica p in u.PolicijskeStanice)
@@ -449,5 +283,25 @@ namespace PolicijskaUprava
                 MessageBox.Show(ec.Message);
             }
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				ISession s = DataLayer.GetSession();
+
+				
+				PolicijskaStanica p = s.Load<PolicijskaStanica>(1);
+
+				MessageBox.Show(p.Naziv);
+				MessageBox.Show(p.PripadaUpravi.Grad);
+
+				s.Close();
+			}
+			catch (Exception ec)
+			{
+				MessageBox.Show(ec.Message);
+			}
+		}
+	}
 }

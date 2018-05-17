@@ -15,6 +15,8 @@ namespace PolicijskaUprava.Mapiranja
             Table("ULICA");
 			
             Map(x => x.Ulica_naziv, "ULICA_NAZIV");
+
+			References(x => x.PozornikUlice).Column("ID_POLICAJCA");
             
 
         }

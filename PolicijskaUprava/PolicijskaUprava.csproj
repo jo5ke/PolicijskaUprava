@@ -93,6 +93,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapiranja\AlarmniSistemMapiranje.cs" />
+    <Compile Include="Mapiranja\PozornikMapiranje.cs" />
     <Compile Include="Mapiranja\SkolaMapiranje.cs" />
     <Compile Include="Mapiranja\SkolskiMapiranje.cs" />
     <Compile Include="Mapiranja\OstaliMapiranje.cs" />

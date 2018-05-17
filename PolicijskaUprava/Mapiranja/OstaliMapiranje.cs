@@ -8,13 +8,12 @@ using PolicijskaUprava.Entiteti;
 
 namespace PolicijskaUprava.Mapiranja
 {
-    class OstaliMapiranje : ClassMap<PolicijskaUprava.Entiteti.Ostali>
+    class OstaliMapiranje : SubclassMap<PolicijskaUprava.Entiteti.Ostali>
     {
         public OstaliMapiranje()
         {
             Table("OSTALI");
-
-            Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+			DiscriminatorValue(4);
 
             References(x => x.PatrolaVodje).Column("ID_VODJE").Unique();
 			References(x => x.RadiU).Column("ID_PATROLE");

@@ -8,7 +8,7 @@ namespace PolicijskaUprava.Entiteti
 {
 	public class VanredneSituacije : Policajac
 	{
-		public virtual int ID { get; set; }
+		
 		public virtual string Naziv_vestine { get; set; }
 		public virtual string Kurs { get; set; }
 		public virtual DateTime Datum_kursa { get; set; }

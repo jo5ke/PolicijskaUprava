@@ -10,6 +10,7 @@ namespace PolicijskaUprava.Entiteti
 	{
 		public virtual int ID { get; set; }
 		public virtual string Licno_ime { get; set; }
+		public virtual int Tip { get; set; }
 		public virtual string Ime_roditelja { get; set; }
 		public virtual string  Prezime { get; set; }
 		public virtual int JMBG { get; set; }

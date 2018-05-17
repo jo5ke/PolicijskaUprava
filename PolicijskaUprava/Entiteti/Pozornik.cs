@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PolicijskaUprava.Entiteti
 {
-	public class Pozornik
+	public class Pozornik : Policajac
 	{
-		public virtual int ID { get; set; }
+		public virtual IList<Ulica> Ulice { get; set; }
 		public Pozornik()
 		{
-
+			Ulice = new List<Ulica>();
 		}
 	}
 }
