@@ -99,15 +99,11 @@
     <Compile Include="Mapiranja\PolicajacMapiranje.cs" />
     <Compile Include="Mapiranja\PolicijskaStanicaMapiranje.cs" />
     <Compile Include="Mapiranja\UpravaMapiranje.cs" />
-    <Compile Include="Mapiranja\SkolaMapiranje.cs" />
-    <Compile Include="Mapiranja\SkolskiMapiranje.cs" />
-    <Compile Include="Mapiranja\TehnickoLiceMapiranje.cs" />
-    <Compile Include="Mapiranja\UlicaMapiranje.cs" />
-    <Compile Include="Mapiranja\UstanovaMapiranje.cs" />
-    <Compile Include="Mapiranja\VanredneSituacijeMapiranja.cs" />
-    <Compile Include="Mapiranja\VoziloMapiranje.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
