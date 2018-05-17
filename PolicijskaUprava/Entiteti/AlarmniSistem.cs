@@ -16,6 +16,8 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Opis_servisiranja { get; set; }
 		public virtual DateTime Datum_Atesta { get; set; }
 		public virtual DateTime Datum_Poslednjeg_Atesta { get; set; }
+        public virtual Objekat ObjekatInstaliran { get; set; }
+        public virtual TehnickoLice TehnickoLice { get; set; }
         
 
 

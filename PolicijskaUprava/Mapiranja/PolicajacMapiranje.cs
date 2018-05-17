@@ -33,7 +33,8 @@ namespace PolicijskaUprava.Mapiranja
             References(x => x.ImaCin).Column("ID_CINA");
             References(x => x.RadiUStanici).Column("ID_STANICE");
             References(x => x.PolicijskaStanicaSefa).Column("ID_SEFA").Unique();
-            Refernces(x => x.PolicijskaStanicaZamenika).Column("ID_ZAMENIKA").Unique();
+            References(x => x.PolicijskaStanicaZamenika).Column("ID_ZAMENIKA").Unique();
+            References(x => x.JeNacelnikUprave).Column("ID_NACELNIKA").Unique();
 
 
         }

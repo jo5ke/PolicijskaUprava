@@ -30,6 +30,7 @@ namespace PolicijskaUprava.Mapiranja
             HasMany(x => x.Objekti).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
             HasMany(x => x.Policajci).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
             HasOne(x => x.SefStanice).PropertyRef(x => x.PolicijskaStanicaSefa);
+            HasOne(x => x.ZamenikStanice).PropertyRef(x => x.PolicijskaStanicaZamenika);
 
 
 

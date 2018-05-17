@@ -14,10 +14,11 @@ namespace PolicijskaUprava.Mapiranja
         {
 
             Table("TEHNICKO_LICE");
+            CompositeId().KeyProperty(x => x.Ime, "IME")
+                .KeyReference(x => x.Serijski_br_alarma, "SERIJSKI_BR_ALARMA");
 
-            Id(x => x.Serijski_br_alarma).Column("SERIJSKI_BR_ALARMA").GeneratedBy.TriggerIdentity(); //Da sluzi kao id
 
-            Map(x => x.Ime, "IME");
+
             
 
         }

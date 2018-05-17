@@ -10,6 +10,7 @@ namespace PolicijskaUprava.Entiteti
 	{
 		public virtual int ID { get; set; }
 		public virtual int Redni_br_patrole { get; set; }
+        public virtual Patrola PatrolaVodje { get; set; }
 
 		public Ostali()
 		{
