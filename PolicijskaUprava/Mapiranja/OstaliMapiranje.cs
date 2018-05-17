@@ -17,6 +17,7 @@ namespace PolicijskaUprava.Mapiranja
             Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
 
             References(x => x.PatrolaVodje).Column("ID_VODJE").Unique();
+			References(x => x.RadiU).Column("ID_PATROLE");
 
         }
     }

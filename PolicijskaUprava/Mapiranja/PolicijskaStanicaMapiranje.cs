@@ -21,12 +21,11 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Opstina, "OPSTINA");
 			Map(x => x.Naziv, "NAZIV");
 			Map(x => x.Datum_osnivanja, "DATUM_OSNIVANJA");
-			Map(x => x.ID_Sefa, "ID_SEFA");
-			Map(x => x.ID_Zamenika, "ID_ZAMENIKA");
-			Map(x => x.ID_Uprave, "ID_UPRAVE"); // JEDAN PREMA JENDAN
+	
 
             References(x => x.PripadaUpravi).Column("ID_UPRAVE").LazyLoad();
 
+			HasMany(x => x.Vozila).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
             HasMany(x => x.Objekti).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
             HasMany(x => x.Policajci).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
             HasOne(x => x.SefStanice).PropertyRef(x => x.PolicijskaStanicaSefa);
