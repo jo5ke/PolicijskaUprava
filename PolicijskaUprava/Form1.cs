@@ -92,27 +92,25 @@ namespace PolicijskaUprava
             {
                 ISession s = DataLayer.GetSession();
 
-                Entiteti.PolicijskaStanica p = new Entiteti.PolicijskaStanica()
-                {
-                    Naziv = "blbla",
-                    Adresa = "fdsf",
-                    Opstina = "ddd",
-                    // Datum_osnivanja = 
-
-                };
-
+                PolicijskaStanica stanica = s.Load<PolicijskaStanica>(1);
+                Ustanova ustanova = s.Load<Ustanova>(1);
+                Cin cin = s.Load<Cin>(1);
                 Policajac pol = new Policajac()
                 {
-                    Licno_ime = "",
-                    Ime_roditelja = "",
-                    Prezime = "",
+                    Licno_ime = "Nikola",
+                    Ime_roditelja = "Stefan",
+                    Prezime = "Ilic",
                     JMBG = 323,
-                    // Pol = "M",
-                    //Datum_rodj=
-                    Adresa = "",
-                    //Datum_diplomiranja=
-                    //Datum_unapredjenja=
-                    Oblast = 1,
+                    Pol = 'M',
+                    Datum_rodj = DateTime.Now,
+                    Adresa = "Dusanova",
+                    Datum_diplomiranja = DateTime.Now,
+                    Datum_unapredjenja = DateTime.Now,
+                    ID_Ustanove = ustanova.ID,
+                    ID_Stanice = stanica.ID,
+                    ID_Cina = cin.ID;
+                    
+
                   
                 };
 

@@ -8,8 +8,9 @@ namespace PolicijskaUprava.Entiteti
 {
 	public abstract class AlarmniSistem
 	{
-		// id ?
-		public virtual int Serijski_br { get; set; }
+		
+        
+        public virtual int Serijski_br { get; set; }
 		public virtual int Godina_proizvodnje { get; set; }
 		public virtual string Proizvodjac { get; set; }
 		public virtual string Model { get; set; }
