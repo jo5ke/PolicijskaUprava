@@ -49,7 +49,8 @@ namespace PolicijskaUprava
 			}
 			catch (Exception ec)
 			{
-				System.Windows.Forms.MessageBox.Show(ec.Message);
+				//System.Windows.Forms.MessageBox.Show(ec.Message);
+				System.Windows.Forms.MessageBox.Show(ec.InnerException.ToString());
 				return null;
 			}
 

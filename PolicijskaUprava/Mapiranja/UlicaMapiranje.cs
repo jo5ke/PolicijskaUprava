@@ -13,8 +13,10 @@ namespace PolicijskaUprava.Mapiranja
         public UlicaMapiranje()
         {
             Table("ULICA");
-			
-            Map(x => x.Ulica_naziv, "ULICA_NAZIV");
+
+			Id(x => x.ID_Policajca, "ID").GeneratedBy.TriggerIdentity();
+
+			Map(x => x.Ulica_naziv, "ULICA_NAZIV");
 
 			References(x => x.PozornikUlice).Column("ID_POLICAJCA");
             
