@@ -26,7 +26,7 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_Poslednjeg_Atesta, "DATUM_POSLEDNJEG_ATESTA");
 
 			HasOne(x => x.TehnickoLice).PropertyRef( x=> x.Serijski_br_alarma);
-			References(x => x.TehnickoLice).Column("SERIJSKI_BR_ALARMA").Unique();
+			//References(x => x.TehnickoLice).Column("SERIJSKI_BR").Unique();
 
 
             References(x => x.ObjekatInstaliran).Column("SERIJSKI_BR_ALARMA").Unique();

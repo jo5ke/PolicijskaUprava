@@ -11,6 +11,7 @@ namespace PolicijskaUprava.Entiteti
 		
 		public virtual AlarmniSistem Serijski_br_alarma { get; set; }
 		public virtual string Ime { get; set; }
+		public virtual int Id { get; set; }
 
 
 		public override bool Equals(object Object)
