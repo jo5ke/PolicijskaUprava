@@ -67,7 +67,6 @@
             this.tabPage1.Size = new System.Drawing.Size(902, 618);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -150,7 +149,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormAdmin";
             this.Text = "FormAdmin";
-            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Policijska_Stanica)).EndInit();
