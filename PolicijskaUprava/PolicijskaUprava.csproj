@@ -115,6 +115,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPolicajac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPolicajac.Designer.cs">
+      <DependentUpon>FormPolicajac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mapiranja\AlarmniSistemMapiranje.cs" />
     <Compile Include="Mapiranja\PozornikMapiranje.cs" />
     <Compile Include="Mapiranja\SkolaMapiranje.cs" />
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOperacija.resx">
       <DependentUpon>FormOperacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPolicajac.resx">
+      <DependentUpon>FormPolicajac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
