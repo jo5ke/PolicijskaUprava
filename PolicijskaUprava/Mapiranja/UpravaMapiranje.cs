@@ -20,8 +20,8 @@ namespace PolicijskaUprava.Mapiranja
 			//Map(x => x.ID_Nacelnika, "ID_NACELNIKA");
 
 
-            HasMany(x => x.PolicijskeStanice).KeyColumn("ID_UPRAVA").LazyLoad().Cascade.All();
-            HasMany(x => x.Policajci).KeyColumn("ID_UPRAVE").LazyLoad().Cascade.All();
+            HasMany(x => x.PolicijskeStanice).KeyColumn("ID_UPRAVA").LazyLoad().Cascade.All().Inverse();
+            HasMany(x => x.Policajci).KeyColumn("ID_UPRAVE").LazyLoad().Cascade.All().Inverse();
             //HasOne(x => x.NacelnikUprave).PropertyRef(x => x.JeNacelnikUprave);
             References(x => x.NacelnikUprave).Column("ID_NACELNIKA").Unique();
 

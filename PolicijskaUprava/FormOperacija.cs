@@ -16,5 +16,23 @@ namespace PolicijskaUprava
         {
             InitializeComponent();
         }
-    }
+
+		private void InitializeComponent()
+		{
+			this.SuspendLayout();
+			// 
+			// FormOperacija
+			// 
+			this.ClientSize = new System.Drawing.Size(284, 261);
+			this.Name = "FormOperacija";
+			this.Load += new System.EventHandler(this.FormOperacija_Load);
+			this.ResumeLayout(false);
+
+		}
+
+		private void FormOperacija_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

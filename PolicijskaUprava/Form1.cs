@@ -20,8 +20,7 @@ namespace PolicijskaUprava
 			InitializeComponent();
 		}
 
-
-        private void cmdCreatePolicijskaStanica_Click(object sender, EventArgs e)
+		private void cmdCreatePolicijskaStanica_Click(object sender, EventArgs e)
         {
             try
             {
@@ -307,6 +306,15 @@ namespace PolicijskaUprava
 			{
 				MessageBox.Show(ec.Message);
 			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			FormAdmin fa = new FormAdmin();
+
+			fa.Show();
+
+			this.Hide();
 		}
 	}
 }

@@ -15,8 +15,9 @@ namespace PolicijskaUprava.Mapiranja
             Table("OSTALI");
             KeyColumn("ID");
 
-            References(x => x.PatrolaVodje).Column("ID_VODJE").Unique();
-			References(x => x.RadiU).Column("ID_PATROLE").LazyLoad();
+			//References(x => x.PatrolaVodje).Column("ID_VODJE").Unique();
+			HasOne(x => x.PatrolaVodje).PropertyRef(x => x.Vodja);
+			References(x => x.RadiU).Column("REDNI_BR_PATROLE").LazyLoad();
 
         }
     }

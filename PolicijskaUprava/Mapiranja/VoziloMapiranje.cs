@@ -15,7 +15,7 @@ namespace PolicijskaUprava.Mapiranja
 
             Table("VOZILO");
 
-            Id(x => x.Reg_oznaka).Column("REG_OZNAKA").GeneratedBy.TriggerIdentity(); //Da sluzi kao id
+            Id(x => x.Reg_oznaka).Column("REG_OZNAKA").GeneratedBy.Increment(); //Da sluzi kao id
 
             Map(x => x.Boja, "BOJA");
             Map(x => x.Tip, "TIP");
@@ -23,8 +23,9 @@ namespace PolicijskaUprava.Mapiranja
             Map(x => x.Proizvodjac, "PROIZVODJAC");
 
             References(x => x.PosedujeStanica).Column("ID_STANICE_VOZILA").LazyLoad();
-            References(x => x.VoziVozilo).Column("REG_OZNAKA_VOZILA").Unique();
+           // References(x => x.VoziVozilo).Column("REG_OZNAKA").Unique();
+			HasOne(x => x.VoziVozilo).PropertyRef(x => x.VoziloPatrole);
 
-        }
+		}
     }
 }

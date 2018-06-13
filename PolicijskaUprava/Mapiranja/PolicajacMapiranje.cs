@@ -33,13 +33,13 @@ namespace PolicijskaUprava.Mapiranja
             References(x => x.JeZamenikUprave).Column("ID_UPRAVE").LazyLoad().Not.Insert()   // <- added this
             .Not.Update();
 
-            References(x => x.PripadaUstanovi).Column("ID_USTANOVE").LazyLoad();
+            References(x => x.PripadaUstanovi).Column("ID_USTANOVE").LazyLoad();//nece
             References(x => x.ImaCin).Column("ID_CINA").LazyLoad();
             References(x => x.RadiUStanici).Column("ID_STANICE").LazyLoad();
             // References(x => x.PolicijskaStanicaSefa).Column("ID_SEFA").Unique();
             //References(x => x.PolicijskaStanicaZamenika).Column("ID_ZAMENIKA").Unique();
             //References(x => x.JeNacelnikUprave).Column("ID_NACELNIKA").Unique();
-            HasOne(x => x.JeNacelnikUprave).PropertyRef(x => x.NacelnikUprave);
+            HasOne(x => x.JeNacelnikUprave).PropertyRef(x => x.NacelnikUprave); //nece
             HasOne(x => x.PolicijskaStanicaSefa).PropertyRef(x => x.SefStanice);
             HasOne(x => x.PolicijskaStanicaZamenika).PropertyRef(x => x.ZamenikStanice);
 

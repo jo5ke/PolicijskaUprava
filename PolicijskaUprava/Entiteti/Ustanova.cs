@@ -19,5 +19,10 @@ namespace PolicijskaUprava.Entiteti
             Policajci = new List<Policajac>();
 
         }
-    }
+		public override string ToString()
+		{
+			return Naziv_ustanove;
+		}
+	}
 }
+

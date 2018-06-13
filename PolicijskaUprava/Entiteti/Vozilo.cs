@@ -8,7 +8,7 @@ namespace PolicijskaUprava.Entiteti
 {
 	public class Vozilo
 	{
-        public virtual string Reg_oznaka { get; set; } //isto
+        public virtual long Reg_oznaka { get; set; } //isto
         public virtual string Boja { get; set; }
 		public virtual string Tip { get; set; }
         public virtual string Model { get; set; } //ne znam sto niste nap
