@@ -115,14 +115,14 @@
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.cmdOneToMany);
 			this.Controls.Add(this.cmdCreateToplotni);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.cmdCreateAlarmniSistem);
+		this.Controls.Add(this.button1);
+		this.Controls.Add(this.cmdCreateAlarmniSistem);
 			this.Controls.Add(this.cmdCreatePolicajac);
 			this.Controls.Add(this.cmdCreatePolicijskaStanica);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.ResumeLayout(false);
-
+            
 		}
 
         #endregion

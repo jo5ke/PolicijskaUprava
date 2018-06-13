@@ -14,7 +14,7 @@ namespace PolicijskaUprava.Mapiranja
         {
             Table("SKOLA");
 
-            Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+            Id(x => x.ID, "ID").GeneratedBy.Increment();
 
             Map(x => x.Tip_skole, "TIP_SKOLE");
             Map(x => x.Naziv, "NAZIV");
@@ -23,7 +23,7 @@ namespace PolicijskaUprava.Mapiranja
             Map(x => x.Ime, "IME");
             Map(x => x.Prezime, "PREZIME");
 
-            HasMany(x => x.Skolski).KeyColumn("ID_SKOLE").LazyLoad().Cascade.All();
+            HasMany(x => x.Skolski).KeyColumn("ID_SKOLE").LazyLoad().Cascade.All().Inverse();
 
 
 

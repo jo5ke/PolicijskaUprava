@@ -14,8 +14,7 @@ namespace PolicijskaUprava.Mapiranja
 		{
 			Table("POLICAJAC");
 
-			Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
-			DiscriminateSubClassesOnColumn("TIP");
+			Id(x => x.ID, "ID").GeneratedBy.Increment();
 
 			Map(x => x.Licno_ime, "LICNO_IME");
 			Map(x => x.Ime_roditelja, "IME_RODITELJA");
@@ -26,16 +25,24 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Adresa, "ADRESA"); // JEDAN PREMA JENDAN
 			Map(x => x.Datum_diplomiranja, "DATUM_DIPLOMIRANJA");
 			Map(x => x.Datum_unapredjenja, "DATUM_UNAPREDJENJA");
-			Map(x => x.Oblast, "OBLAST");
-			Map(x => x.Tip, "TIP");
-            References(x => x.JeZamenikUprave).Column("ID_UPRAVE");
+            Map(x => x.Oblast, "OBLAST").Not.Insert()   // <- added this
+            .Not.Update();
+            //Map(x => x.Tip, "TIP").Not.Insert()   // <- added this
+            // .Not.Update();
 
-            References(x => x.PripadaUstanovi).Column("ID_USTANOVE");
-            References(x => x.ImaCin).Column("ID_CINA");
-            References(x => x.RadiUStanici).Column("ID_STANICE");
-            References(x => x.PolicijskaStanicaSefa).Column("ID_SEFA").Unique();
-            References(x => x.PolicijskaStanicaZamenika).Column("ID_ZAMENIKA").Unique();
-            References(x => x.JeNacelnikUprave).Column("ID_NACELNIKA").Unique();
+            References(x => x.JeZamenikUprave).Column("ID_UPRAVE").LazyLoad().Not.Insert()   // <- added this
+            .Not.Update();
+
+            References(x => x.PripadaUstanovi).Column("ID_USTANOVE").LazyLoad();
+            References(x => x.ImaCin).Column("ID_CINA").LazyLoad();
+            References(x => x.RadiUStanici).Column("ID_STANICE").LazyLoad();
+            // References(x => x.PolicijskaStanicaSefa).Column("ID_SEFA").Unique();
+            //References(x => x.PolicijskaStanicaZamenika).Column("ID_ZAMENIKA").Unique();
+            //References(x => x.JeNacelnikUprave).Column("ID_NACELNIKA").Unique();
+            HasOne(x => x.JeNacelnikUprave).PropertyRef(x => x.NacelnikUprave);
+            HasOne(x => x.PolicijskaStanicaSefa).PropertyRef(x => x.SefStanice);
+            HasOne(x => x.PolicijskaStanicaZamenika).PropertyRef(x => x.ZamenikStanice);
+
 
 
         }

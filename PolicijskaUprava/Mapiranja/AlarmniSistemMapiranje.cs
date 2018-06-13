@@ -14,22 +14,24 @@ namespace PolicijskaUprava.Mapiranja
 		{
 			Table("ALARMNI_SISTEM");
 
-			Id(x => x.Serijski_br, "SERIJSKI_BR").GeneratedBy.TriggerIdentity();
+			Id(x => x.Serijski_br, "SERIJSKI_BR").GeneratedBy.Increment();
             //DiscriminateSubClassesOnColumn("TIP");
             DiscriminateSubClassesOnColumn("TIP");
 
 			Map(x => x.Godina_proizvodnje, "GODINA_PROIZVODNJE");
 			Map(x => x.Proizvodjac, "PROIZVODJAC");
 			Map(x => x.Model, "MODEL");
-			Map(x => x.Opis_servisiranja, "OPIS_SERVISIRANJA");
 			Map(x => x.Datum_Atesta, "DATUM_ATESTA");
-			Map(x => x.Datum_Poslednjeg_Atesta, "DATUM_POSLEDNJEG_ATESTA");
+			Map(x => x.Datum_Poslednjeg_Atesta, "DATUM_POSLEDNJEG_SERVISIRANJA");
 
-			HasOne(x => x.TehnickoLice).PropertyRef( x=> x.Serijski_br_alarma);
-			//References(x => x.TehnickoLice).Column("SERIJSKI_BR").Unique();
+            Map(x => x.Opis_servisiranja, "OPIS_SERVISIRANJA");
+
+            HasOne(x => x.TehnickoLice).PropertyRef( x=> x.Serijski_br_alarma);
+		//	References(x => x.TehnickoLice).Column("SERIJSKI_BR").Unique();
 
 
-            References(x => x.ObjekatInstaliran).Column("SERIJSKI_BR_ALARMA").Unique();
+           //References(x => x.ObjekatInstaliran).Column("SERIJSKI_BR").Unique();
+           HasOne(x => x.ObjekatInstaliran).PropertyRef(x => x.InstaliranAlarmniSis);
 
         }
 

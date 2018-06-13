@@ -15,7 +15,7 @@ namespace PolicijskaUprava.Mapiranja
 		
 			Table("POLICIJSKA_STANICA");
 
-			Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+			Id(x => x.ID, "ID").GeneratedBy.Increment();
 
 			Map(x => x.Adresa, "ADRESA");
 			Map(x => x.Opstina, "OPSTINA");
@@ -23,13 +23,18 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_osnivanja, "DATUM_OSNIVANJA");
 	
 
-            References(x => x.PripadaUpravi).Column("ID_UPRAVE").LazyLoad();
+            References(x => x.PripadaUpravi).Column("ID_UPRAVA").LazyLoad().Not.Insert()   // <- added this
+   .Not.Update();
 
-			HasMany(x => x.Vozila).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
-            HasMany(x => x.Objekti).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
-            HasMany(x => x.Policajci).KeyColumn("ID_STANICE").LazyLoad().Cascade.All();
-            HasOne(x => x.SefStanice).PropertyRef(x => x.PolicijskaStanicaSefa);
-            HasOne(x => x.ZamenikStanice).PropertyRef(x => x.PolicijskaStanicaZamenika);
+            HasMany(x => x.Vozila).KeyColumn("ID_STANICE_VOZILA").LazyLoad().Cascade.All().Inverse();
+            HasMany(x => x.Objekti).KeyColumn("ID_STANICE_OBJEKTA").LazyLoad().Cascade.All().Inverse();
+            HasMany(x => x.Policajci).KeyColumn("ID_STANICE").LazyLoad().Cascade.All().Inverse();
+            // HasOne(x => x.SefStanice).PropertyRef(x => x.PolicijskaStanicaSefa);
+            // HasOne(x => x.ZamenikStanice).PropertyRef(x => x.PolicijskaStanicaZamenika);
+            References(x => x.SefStanice).Column("ID_SEFA").Unique().Not.Insert()   // <- added this
+   .Not.Update();
+            References(x => x.ZamenikStanice).Column("ID_ZAMENIKA").Unique().Not.Insert()   // <- added this
+   .Not.Update();
 
 
 

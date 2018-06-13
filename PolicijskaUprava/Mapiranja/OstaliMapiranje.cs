@@ -13,10 +13,10 @@ namespace PolicijskaUprava.Mapiranja
         public OstaliMapiranje()
         {
             Table("OSTALI");
-			DiscriminatorValue(4);
+            KeyColumn("ID");
 
             References(x => x.PatrolaVodje).Column("ID_VODJE").Unique();
-			References(x => x.RadiU).Column("ID_PATROLE");
+			References(x => x.RadiU).Column("ID_PATROLE").LazyLoad();
 
         }
     }

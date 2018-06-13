@@ -14,7 +14,7 @@ namespace PolicijskaUprava.Mapiranja
 		{
 			Table("OBJEKAT");
 
-			Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+			Id(x => x.ID, "ID").GeneratedBy.Increment();
 
 			Map(x => x.Tip, "TIP");
 			Map(x => x.Povrsina, "POVRSINA");
@@ -25,9 +25,10 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_instalacije, "DATUM_INSTALACIJE");
 
 
-            References(x => x.NadzireStanica).Column("ID_STANICE");
+            References(x => x.NadzireStanica).Column("ID_STANICE_OBJEKTA");
             HasMany(x => x.Patrole).KeyColumn("ID_OBJEKTA").LazyLoad().Cascade.All();
-            HasOne(x => x.InstaliranAlarmniSis).PropertyRef(x => x.ObjekatInstaliran);
+          References(x => x.InstaliranAlarmniSis).Column("SERIJSKI_BR_ALARMA").Unique();
+         //HasOne(x => x.InstaliranAlarmniSis).PropertyRef(x => x.ObjekatInstaliran);
 
 
 

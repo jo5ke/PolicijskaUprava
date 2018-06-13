@@ -14,11 +14,11 @@ namespace PolicijskaUprava.Mapiranja
 		{
 			Table("CIN");
 
-			Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+			Id(x => x.ID, "ID").GeneratedBy.Increment();
 
 			Map(x => x.Naziv_cina, "NAZIV_CINA");
 
-            HasMany(x => x.Policajci).KeyColumn("ID_CINA").LazyLoad().Cascade.All();
+            HasMany(x => x.Policajci).KeyColumn("ID_CINA").LazyLoad().Cascade.All().Inverse();
 
 
         }

@@ -14,7 +14,7 @@ namespace PolicijskaUprava.Mapiranja
         {
             Table("SKOLSKI");
 
-			DiscriminatorValue(1);
+            KeyColumn("ID");
             References(x => x.RadiUSkoli).Column("ID_SKOLE").LazyLoad();
 
 

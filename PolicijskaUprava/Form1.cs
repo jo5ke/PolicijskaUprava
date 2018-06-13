@@ -32,10 +32,11 @@ namespace PolicijskaUprava
 				Policajac zamenik = s.Load<Policajac>(6);
 
 				PolicijskaStanica p = new PolicijskaStanica();
-				p.Naziv = "Stanica Pirot";
-				p.Adresa = "Dusanova";
-				p.Opstina = "Pantelej";
-				p.Datum_osnivanja = DateTime.Now;
+               
+				p.Adresa = "Vozdova";
+				p.Opstina = "Pirot";
+                p.Naziv = "Stanica Pirot";
+                p.Datum_osnivanja = DateTime.Now;
 				p.ID_Sefa = sef.ID;
 				p.ID_Uprave = u.ID;
 				p.ID_Zamenika = zamenik.ID;
@@ -64,40 +65,41 @@ namespace PolicijskaUprava
         {
             try
             {
+
                 ISession s = DataLayer.GetSession();
 
                 PolicijskaStanica stanica = s.Load<PolicijskaStanica>(1);
                 Ustanova ustanova = s.Load<Ustanova>(1);
+                Skola skola = s.Load<Skola>(1);
                 Cin cin = s.Load<Cin>(1);
-                Policajac pol = new Policajac()
-                {
-                    Licno_ime = "Nikola",
-                    Ime_roditelja = "Stefan",
-                    Prezime = "Ilic",
-                    JMBG = 323,
-                    Pol = 'M',
-                    Datum_rodj = DateTime.Now,
-                    Adresa = "Dusanova",
-                    Datum_diplomiranja = DateTime.Now,
-                    Datum_unapredjenja = DateTime.Now,
-                    ID_Ustanove = ustanova.ID,
-                    ID_Stanice = stanica.ID,
-                    ID_Cina = cin.ID
-                    
+                Skolski pol = new Skolski();
 
-                  
-                };
-
-
-                
-                s.Save(pol);
-
+                //pol.ID = 12;
+                pol.Licno_ime = "Nikola";
+                pol.Ime_roditelja = "Stefan";
+                pol.Prezime = "Ilic";
+                pol.JMBG = 3158658965223;
+                pol.Pol ='M';
+                pol.Datum_rodj = DateTime.Now;
+                pol.Adresa = "Dusanova";
+                pol.Datum_diplomiranja = DateTime.Now;
+                pol.Datum_unapredjenja = DateTime.Now;
+                pol.PripadaUstanovi = ustanova;
+                pol.ImaCin = cin;
                 pol.RadiUStanici = stanica;
-                s.Save(pol);
-                
+                pol.RadiUSkoli = skola;
+              
+                cin.Policajci.Add(pol);
+                s.Save(cin);
+                ustanova.Policajci.Add(pol);
+                s.Save(ustanova);
+                skola.Skolski.Add(pol);
+                s.Save(skola);
                 stanica.Policajci.Add(pol);
-
                 s.Save(stanica);
+                s.Save(pol);
+              s.Flush();
+               s.Close();
 
             }
             catch (Exception ec)
@@ -115,25 +117,26 @@ namespace PolicijskaUprava
 				ISession s = DataLayer.GetSession();
 
 				Objekat o = s.Load<Objekat>(2);
-				TehnickoLice lice = s.Load<TehnickoLice>(1);
+                //TehnickoLice lice = s.Load<TehnickoLice>(1);
 
-				Toplotni t = new Toplotni()
-				{
-					Datum_Atesta = DateTime.Now,
-					Datum_Poslednjeg_Atesta = DateTime.Now,
-					Opis_servisiranja = "Kvar",
-					Model = "Cz67zS",
-					Proizvodjac = "Samsung",
-					Godina_proizvodnje = 1998,
-					Tip = "Toplotni",
-					Horizontalna_rez = 3,
-					Vertikalna_rez = 3,
+                Toplotni t = new Toplotni();
+
+                t.Godina_proizvodnje = 1998;
+                t.Proizvodjac = "Samsung";
+                t.Model = "Cz67zS";
+                t.Datum_Atesta = DateTime.Now;
+                t.Datum_Poslednjeg_Atesta = DateTime.Now;
+                t.Opis_servisiranja = "Kvar";
+                t.Horizontalna_rez = 3;
+                t.Vertikalna_rez = 3;
+                t.Tip = "TOPLOTNI";
+                t.Serijski_br = 4;
+                s.Save(t);
 
 
 
-				};
 
-				Pokretni p = new Pokretni()
+                Pokretni p = new Pokretni()
 				{
 					Datum_Atesta = DateTime.Now,
 					Datum_Poslednjeg_Atesta = DateTime.Now,
@@ -161,7 +164,7 @@ namespace PolicijskaUprava
 
 
 
-				s.Save(o);
+				
 
 				t.ObjekatInstaliran = o;
 				s.Save(t);
@@ -176,7 +179,8 @@ namespace PolicijskaUprava
 				o.InstaliranAlarmniSis = u;
 
 				s.Save(o);
-
+                s.Flush();
+                s.Close();
 			}
 			catch (Exception ec)
 			{
@@ -234,13 +238,13 @@ namespace PolicijskaUprava
                 {
                     Datum_Atesta=DateTime.Now,
                     Datum_Poslednjeg_Atesta=DateTime.Now,
-					Tip="Toplotni",
+					//Tip="Toplotni",
                     Opis_servisiranja = "Kvar",
                     Model = "G6557j",
                     Proizvodjac = "",
 					Godina_proizvodnje=1990,
 					Horizontalna_rez = 3,
-                    Vertikalna_rez = 3,
+                    Vertikalna_rez = 3
                 };
 
                 s.Save(t);
@@ -249,6 +253,7 @@ namespace PolicijskaUprava
 				u.InstaliranAlarmniSis=t;
 
 				s.Save(u);
+               s.Flush();
 
                 s.Close();
 				
@@ -269,7 +274,7 @@ namespace PolicijskaUprava
                 ISession s = DataLayer.GetSession();
 
                 
-                PolicijskaUprava.Entiteti.Uprava u = s.Load<PolicijskaUprava.Entiteti.Uprava>(61);
+                PolicijskaUprava.Entiteti.Uprava u = s.Load<PolicijskaUprava.Entiteti.Uprava>(1);
 
                 foreach (PolicijskaStanica p in u.PolicijskeStanice)
                 {

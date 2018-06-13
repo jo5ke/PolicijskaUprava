@@ -14,7 +14,7 @@ namespace PolicijskaUprava.Mapiranja
 		{
 			Table("POZORNIK");
 
-			DiscriminatorValue(3);
+			KeyColumn("ID");
 			HasMany(x => x.Ulice).KeyColumn("ID_POLICAJCA").LazyLoad().Cascade.All();
 
 

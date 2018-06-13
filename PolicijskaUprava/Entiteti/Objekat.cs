@@ -15,7 +15,7 @@ namespace PolicijskaUprava.Entiteti
 		public virtual string Ime { get; set; }
 		public virtual string Prezime { get; set; }
 		public virtual int Br_telefona { get; set; }
-		public virtual int Serijski_br_alarma { get; set; }
+		//public virtual int Serijski_br_alarma { get; set; }
 		public virtual DateTime Datum_instalacije { get; set; }
 		public virtual int ID_Stanice { get; set; }
         public virtual AlarmniSistem InstaliranAlarmniSis { get; set; }

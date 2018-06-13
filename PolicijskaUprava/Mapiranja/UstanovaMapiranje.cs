@@ -14,12 +14,12 @@ namespace PolicijskaUprava.Mapiranja
         {
             Table("USTANOVA");
 
-            Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+            Id(x => x.ID, "ID").GeneratedBy.Increment();
 
             Map(x => x.Naziv_ustanove, "NAZIV_USTANOVE");
             Map(x => x.Tip, "TIP");
 
-            HasMany(x => x.Policajci).KeyColumn("ID_USTANOVE").LazyLoad().Cascade.All();
+            HasMany(x => x.Policajci).KeyColumn("ID_USTANOVE").LazyLoad().Cascade.All().Inverse();
 
 
         }

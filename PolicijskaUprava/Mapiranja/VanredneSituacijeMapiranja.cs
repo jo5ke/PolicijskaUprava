@@ -13,7 +13,7 @@ namespace PolicijskaUprava.Mapiranja
         public VanredneSituacijeMapiranje()
         {
             Table("VANREDNE_SITUACIJE");
-			DiscriminatorValue(2);
+            KeyColumn("ID");
 			
 
             Map(x => x.Naziv_vestine, "NAZIV_VESTINE");

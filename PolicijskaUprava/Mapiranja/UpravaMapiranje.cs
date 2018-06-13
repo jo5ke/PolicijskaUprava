@@ -14,15 +14,16 @@ namespace PolicijskaUprava.Mapiranja
 		{
 			Table("UPRAVA");
 
-			Id(x => x.ID, "ID").GeneratedBy.TriggerIdentity();
+			Id(x => x.ID, "ID").GeneratedBy.Increment();
 
 			Map(x => x.Grad, "GRAD");
-			Map(x => x.ID_Nacelnika, "ID_NACELNIKA");
+			//Map(x => x.ID_Nacelnika, "ID_NACELNIKA");
 
 
-            HasMany(x => x.PolicijskeStanice).KeyColumn("ID_UPRAVE").LazyLoad().Cascade.All();
+            HasMany(x => x.PolicijskeStanice).KeyColumn("ID_UPRAVA").LazyLoad().Cascade.All();
             HasMany(x => x.Policajci).KeyColumn("ID_UPRAVE").LazyLoad().Cascade.All();
-            HasOne(x => x.NacelnikUprave).PropertyRef(x => x.JeNacelnikUprave);
+            //HasOne(x => x.NacelnikUprave).PropertyRef(x => x.JeNacelnikUprave);
+            References(x => x.NacelnikUprave).Column("ID_NACELNIKA").Unique();
 
 
 
