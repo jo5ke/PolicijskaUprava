@@ -18,6 +18,8 @@ namespace PolicijskaUprava.Mapiranja
             //DiscriminateSubClassesOnColumn("TIP");
             DiscriminateSubClassesOnColumn("TIP");
 
+
+            
 			Map(x => x.Godina_proizvodnje, "GODINA_PROIZVODNJE");
 			Map(x => x.Proizvodjac, "PROIZVODJAC");
 			Map(x => x.Model, "MODEL");
