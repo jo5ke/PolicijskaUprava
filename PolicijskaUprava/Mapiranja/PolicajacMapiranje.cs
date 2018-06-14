@@ -33,7 +33,7 @@ namespace PolicijskaUprava.Mapiranja
             References(x => x.JeZamenikUprave).Column("ID_UPRAVE").LazyLoad().Not.Insert()   // <- added this
             .Not.Update();
 
-            References(x => x.PripadaUstanovi).Column("ID_USTANOVE").LazyLoad();//nece
+            References(x => x.PripadaUstanovi).Column("ID_USTANOVE");//nece
             References(x => x.ImaCin).Column("ID_CINA").LazyLoad();
             References(x => x.RadiUStanici).Column("ID_STANICE").LazyLoad();
             // References(x => x.PolicijskaStanicaSefa).Column("ID_SEFA").Unique();

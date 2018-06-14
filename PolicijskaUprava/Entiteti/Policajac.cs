@@ -40,6 +40,10 @@ namespace PolicijskaUprava.Entiteti
 		{
 
 		}
+		public override string ToString()
+		{
+			return ID + " " + Licno_ime;
+		}
 
 	}
 }
