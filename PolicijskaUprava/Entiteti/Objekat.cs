@@ -17,7 +17,7 @@ namespace PolicijskaUprava.Entiteti
 		public virtual int Br_telefona { get; set; }
 		//public virtual int Serijski_br_alarma { get; set; }
 		public virtual DateTime Datum_instalacije { get; set; }
-		public virtual int ID_Stanice { get; set; }
+	//	public virtual int ID_Stanice { get; set; }
         public virtual AlarmniSistem InstaliranAlarmniSis { get; set; }
 
         public virtual PolicijskaStanica NadzireStanica { get; set; }
@@ -30,6 +30,14 @@ namespace PolicijskaUprava.Entiteti
 		{
             Patrole = new List<Patrola>();
 
+        }
+        public override string ToString()
+        {
+            return Tip + " " + Adresa;
+        }
+        public virtual string vratiObj()
+        {
+            return Tip + " " + Adresa;
         }
 
     }

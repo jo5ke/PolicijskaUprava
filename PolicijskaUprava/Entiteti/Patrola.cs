@@ -10,11 +10,11 @@ namespace PolicijskaUprava.Entiteti
 	{
 		// id ili redni_br?
 		public virtual int Redni_br { get; set; }
-		public virtual int ID_Vodje { get; set; }
+		//public virtual int ID_Vodje { get; set; }
         public virtual Ostali Vodja { get; set; }
-		public virtual int Reg_oznaka_vozila { get; set; }
+	//	public virtual int Reg_oznaka_vozila { get; set; }
         public virtual Vozilo VoziloPatrole { get; set; }
-		public virtual int ID_Objekta { get; set; }
+		//public virtual int ID_Objekta { get; set; }
 		public virtual DateTime Vreme { get; set; }
 		public virtual string Opis { get; set; }
 
@@ -27,6 +27,13 @@ namespace PolicijskaUprava.Entiteti
 		{
 
 		}
-
-	}
+        public virtual string vrati()
+        {
+            return VoziloPatrole.Reg_oznaka.ToString() + " " + Vodja.vratiIme();
+        }
+        public override string ToString()
+        {
+            return " Reg. oznaka vozila patrole: " + VoziloPatrole.Reg_oznaka.ToString()  + " Opis servisiranja: " + Opis;
+        }
+    }
 }

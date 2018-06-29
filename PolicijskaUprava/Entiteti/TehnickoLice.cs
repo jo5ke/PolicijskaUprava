@@ -21,7 +21,15 @@ namespace PolicijskaUprava.Entiteti
 
 		return false;
 		}
-		public override int GetHashCode()
+        public virtual string vratiIme()
+        {
+            return Ime;
+        }
+        public override string ToString()
+        {
+            return Ime;
+        }
+        public override int GetHashCode()
         {
             return base.GetHashCode();
        }

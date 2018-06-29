@@ -28,136 +28,86 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.cmdCreatePolicijskaStanica = new System.Windows.Forms.Button();
-			this.cmdCreatePolicajac = new System.Windows.Forms.Button();
-			this.cmdCreateAlarmniSistem = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
-			this.cmdCreateToplotni = new System.Windows.Forms.Button();
-			this.cmdOneToMany = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// cmdCreatePolicijskaStanica
-			// 
-			this.cmdCreatePolicijskaStanica.Location = new System.Drawing.Point(12, 41);
-			this.cmdCreatePolicijskaStanica.Name = "cmdCreatePolicijskaStanica";
-			this.cmdCreatePolicijskaStanica.Size = new System.Drawing.Size(196, 23);
-			this.cmdCreatePolicijskaStanica.TabIndex = 1;
-			this.cmdCreatePolicijskaStanica.Text = "Dodavanje policijske stanice";
-			this.cmdCreatePolicijskaStanica.UseVisualStyleBackColor = true;
-			this.cmdCreatePolicijskaStanica.Click += new System.EventHandler(this.cmdCreatePolicijskaStanica_Click);
-			// 
-			// cmdCreatePolicajac
-			// 
-			this.cmdCreatePolicajac.Location = new System.Drawing.Point(11, 70);
-			this.cmdCreatePolicajac.Name = "cmdCreatePolicajac";
-			this.cmdCreatePolicajac.Size = new System.Drawing.Size(197, 23);
-			this.cmdCreatePolicajac.TabIndex = 2;
-			this.cmdCreatePolicajac.Text = "Dodavanje policajca";
-			this.cmdCreatePolicajac.UseVisualStyleBackColor = true;
-			this.cmdCreatePolicajac.Click += new System.EventHandler(this.cmdCreatePolicajac_Click);
-			// 
-			// cmdCreateAlarmniSistem
-			// 
-			this.cmdCreateAlarmniSistem.Location = new System.Drawing.Point(11, 99);
-			this.cmdCreateAlarmniSistem.Name = "cmdCreateAlarmniSistem";
-			this.cmdCreateAlarmniSistem.Size = new System.Drawing.Size(197, 23);
-			this.cmdCreateAlarmniSistem.TabIndex = 6;
-			this.cmdCreateAlarmniSistem.Text = "Dodavanje alarmnog sistema";
-			this.cmdCreateAlarmniSistem.UseVisualStyleBackColor = true;
-			this.cmdCreateAlarmniSistem.Click += new System.EventHandler(this.cmdCreateAlarmniSistem_Click);
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(11, 128);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(197, 23);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "Table-per-Class-Hierarchy inheritance";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// cmdCreateToplotni
-			// 
-			this.cmdCreateToplotni.Location = new System.Drawing.Point(12, 157);
-			this.cmdCreateToplotni.Name = "cmdCreateToplotni";
-			this.cmdCreateToplotni.Size = new System.Drawing.Size(196, 23);
-			this.cmdCreateToplotni.TabIndex = 8;
-			this.cmdCreateToplotni.Text = "Dodavanje toplotnog";
-			this.cmdCreateToplotni.UseVisualStyleBackColor = true;
-			this.cmdCreateToplotni.Click += new System.EventHandler(this.cmdCreateToplotni_Click);
-			// 
-			// cmdOneToMany
-			// 
-			this.cmdOneToMany.Location = new System.Drawing.Point(11, 186);
-			this.cmdOneToMany.Name = "cmdOneToMany";
-			this.cmdOneToMany.Size = new System.Drawing.Size(197, 23);
-			this.cmdOneToMany.TabIndex = 9;
-			this.cmdOneToMany.Text = "Veza one to many";
-			this.cmdOneToMany.UseVisualStyleBackColor = true;
-			this.cmdOneToMany.Click += new System.EventHandler(this.cmdOneToMany_Click);
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(12, 215);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(196, 23);
-			this.button2.TabIndex = 10;
-			this.button2.Text = "Veza many to one";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(334, 375);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 11;
-			this.button3.Text = "Admin mode";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
-			// button4
-			// 
-			this.button4.Location = new System.Drawing.Point(479, 375);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(75, 23);
-			this.button4.TabIndex = 12;
-			this.button4.Text = "User mode";
-			this.button4.UseVisualStyleBackColor = true;
-			// 
-			// Form1
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.button4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.cmdOneToMany);
-			this.Controls.Add(this.cmdCreateToplotni);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.cmdCreateAlarmniSistem);
-			this.Controls.Add(this.cmdCreatePolicajac);
-			this.Controls.Add(this.cmdCreatePolicijskaStanica);
-			this.Name = "Form1";
-			this.Text = "Form1";
-			this.ResumeLayout(false);
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(12, 165);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 39);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Admin mode";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Location = new System.Drawing.Point(491, 165);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 39);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "User mode";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(-6, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(610, 41);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Dobrodošli u servis Policijske Uprave Niš!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.UseMnemonic = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(55, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(466, 27);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Da li želite da se prijavite kao admin ili korisnik?";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PolicijskaUprava.Properties.Resources.police_station;
+            this.ClientSize = new System.Drawing.Size(601, 383);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Name = "Form1";
+            this.Text = "Policijska Uprava Niš";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
         #endregion
-        private System.Windows.Forms.Button cmdCreatePolicijskaStanica;
-        private System.Windows.Forms.Button cmdCreatePolicajac;
-        private System.Windows.Forms.Button cmdCreateAlarmniSistem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button cmdCreateToplotni;
-        private System.Windows.Forms.Button cmdOneToMany;
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
-	}
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+    }
 }
 

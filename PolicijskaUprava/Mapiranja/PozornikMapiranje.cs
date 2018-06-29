@@ -16,8 +16,9 @@ namespace PolicijskaUprava.Mapiranja
 
 			KeyColumn("ID");
 			HasMany(x => x.Ulice).KeyColumn("ID_POLICAJCA").LazyLoad().Cascade.All().Inverse();
+            //References(x => x.Ulice).Column("ID_ULICE").LazyLoad();
 
 
-		}
+        }
 	}
 }

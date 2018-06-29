@@ -16,15 +16,16 @@ namespace PolicijskaUprava.Mapiranja
 
 			Id(x => x.Serijski_br, "SERIJSKI_BR").GeneratedBy.Increment();
             //DiscriminateSubClassesOnColumn("TIP");
-            DiscriminateSubClassesOnColumn("TIP");
+          //  DiscriminateSubClassesOnColumn("TIP");
 
 
             
 			Map(x => x.Godina_proizvodnje, "GODINA_PROIZVODNJE");
 			Map(x => x.Proizvodjac, "PROIZVODJAC");
 			Map(x => x.Model, "MODEL");
-			Map(x => x.Datum_Atesta, "DATUM_ATESTA");
-			Map(x => x.Datum_Poslednjeg_Atesta, "DATUM_POSLEDNJEG_SERVISIRANJA");
+            Map(x => x.Tip, "TIP");
+            Map(x => x.Datum_Atesta, "DATUM_ATESTA");
+			Map(x => x.Datum_Poslednjeg_Servisiranja, "DATUM_POSLEDNJEG_SERVISIRANJA");
 
             Map(x => x.Opis_servisiranja, "OPIS_SERVISIRANJA");
 
@@ -42,9 +43,9 @@ namespace PolicijskaUprava.Mapiranja
 			public AlarmniSistemToplotniMapiranja()
 			{
                 Table("TOPLOTNI");
+                KeyColumn("SERIJSKI_BR");
                 Map(x => x.Horizontalna_rez, "HORIZONTALNA_REZ");
                 Map(x => x.Vertikalna_rez, "VERTIKALNA_REZ");
-                DiscriminatorValue("TOPLOTNI");
 			}
 		}
 		class AlarmniSistemUltrazvucniMapiranja : SubclassMap<Ultrazvucni>
@@ -52,8 +53,8 @@ namespace PolicijskaUprava.Mapiranja
 			public AlarmniSistemUltrazvucniMapiranja()
 			{
                 Table("ULTRAZVUCNI");
+                KeyColumn("SERIJSKI_BR");
                 Map(x => x.Frekvencija, "FREKVENCIJA");
-                DiscriminatorValue("ULTRAZVUCNI");
 			}
 		}
 		class AlarmniSistemPokretniMapiranja : SubclassMap<Pokretni>
@@ -61,8 +62,8 @@ namespace PolicijskaUprava.Mapiranja
 			public AlarmniSistemPokretniMapiranja()
 			{
                 Table("POKRETNI");
+                KeyColumn("SERIJSKI_BR");
                 Map(x => x.Tezina, "TEZINA");
-                DiscriminatorValue("POKRETNI");
 			}
 		}
 	}

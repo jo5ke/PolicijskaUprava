@@ -22,7 +22,7 @@ namespace PolicijskaUprava.Mapiranja
             Map(x => x.Model, "MODEL");
             Map(x => x.Proizvodjac, "PROIZVODJAC");
 
-            References(x => x.PosedujeStanica).Column("ID_STANICE_VOZILA").LazyLoad();
+            References(x => x.PosedujeStanica).Column("ID_STANICE").LazyLoad();
            // References(x => x.VoziVozilo).Column("REG_OZNAKA").Unique();
 			HasOne(x => x.VoziVozilo).PropertyRef(x => x.VoziloPatrole);
 

@@ -19,5 +19,13 @@ namespace PolicijskaUprava.Entiteti
 
 
         }
+        public virtual string vratiNaziv()
+        {
+            return Naziv_cina;
+        }
+        public override string ToString()
+        {
+            return Naziv_cina;
+        }
     }
 }

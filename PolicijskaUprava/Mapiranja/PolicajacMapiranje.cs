@@ -27,8 +27,8 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_unapredjenja, "DATUM_UNAPREDJENJA");
             Map(x => x.Oblast, "OBLAST").Not.Insert()   // <- added this
             .Not.Update();
-            //Map(x => x.Tip, "TIP").Not.Insert()   // <- added this
-            // .Not.Update();
+            Map(x => x.Tip, "TIP").Not.Insert()   // <- added this
+             .Not.Update();
 
             References(x => x.JeZamenikUprave).Column("ID_UPRAVE").LazyLoad().Not.Insert()   // <- added this
             .Not.Update();

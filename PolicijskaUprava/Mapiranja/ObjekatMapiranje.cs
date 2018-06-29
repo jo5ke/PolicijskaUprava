@@ -25,8 +25,8 @@ namespace PolicijskaUprava.Mapiranja
 			Map(x => x.Datum_instalacije, "DATUM_INSTALACIJE");
 
 
-            References(x => x.NadzireStanica).Column("ID_STANICE_OBJEKTA");
-            HasMany(x => x.Patrole).KeyColumn("ID_OBJEKTA").LazyLoad().Cascade.All();
+            References(x => x.NadzireStanica).Column("ID_STANICE_OBJEKTA").LazyLoad();
+            HasMany(x => x.Patrole).KeyColumn("ID_OBJEKTA").LazyLoad().Cascade.All().Inverse();
           References(x => x.InstaliranAlarmniSis).Column("SERIJSKI_BR_ALARMA").Unique();
          //HasOne(x => x.InstaliranAlarmniSis).PropertyRef(x => x.ObjekatInstaliran);
 

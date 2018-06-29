@@ -24,6 +24,10 @@ namespace PolicijskaUprava.Entiteti
 
 
         }
+        public override string ToString()
+        {
+            return Naziv;
+        }
 
     }
 }

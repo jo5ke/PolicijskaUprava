@@ -106,20 +106,98 @@
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOperacija.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPolicajac.cs">
+    <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPolicajac.Designer.cs">
-      <DependentUpon>FormPolicajac.cs</DependentUpon>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlarmniSistem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlarmniSistem.Designer.cs">
+      <DependentUpon>FormAlarmniSistem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajObjekat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajObjekat.Designer.cs">
+      <DependentUpon>FormDodajObjekat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajPolicajca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajPolicajca.Designer.cs">
+      <DependentUpon>FormDodajPolicajca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajStanicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajStanicu.Designer.cs">
+      <DependentUpon>FormDodajStanicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIzmeniObjekat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzmeniObjekat.Designer.cs">
+      <DependentUpon>FormIzmeniObjekat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIzmeniPolicajca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzmeniPolicajca.Designer.cs">
+      <DependentUpon>FormIzmeniPolicajca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIzmeniStanicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzmeniStanicu.Designer.cs">
+      <DependentUpon>FormIzmeniStanicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIzmeniZamenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzmeniZamenika.Designer.cs">
+      <DependentUpon>FormIzmeniZamenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKorisnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKorisnik.Designer.cs">
+      <DependentUpon>FormKorisnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormObjekat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormObjekat.Designer.cs">
+      <DependentUpon>FormObjekat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormObjekatTehLice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormObjekatTehLice.Designer.cs">
+      <DependentUpon>FormObjekatTehLice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPolicijskaStanica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPolicijskaStanica.Designer.cs">
+      <DependentUpon>FormPolicijskaStanica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTehLiceDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTehLiceDodaj.Designer.cs">
+      <DependentUpon>FormTehLiceDodaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUprava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUprava.Designer.cs">
+      <DependentUpon>FormUprava.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapiranja\AlarmniSistemMapiranje.cs" />
     <Compile Include="Mapiranja\PozornikMapiranje.cs" />
@@ -145,11 +223,47 @@
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOperacija.resx">
-      <DependentUpon>FormOperacija.cs</DependentUpon>
+    <EmbeddedResource Include="FormAlarmniSistem.resx">
+      <DependentUpon>FormAlarmniSistem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPolicajac.resx">
-      <DependentUpon>FormPolicajac.cs</DependentUpon>
+    <EmbeddedResource Include="FormDodajObjekat.resx">
+      <DependentUpon>FormDodajObjekat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajPolicajca.resx">
+      <DependentUpon>FormDodajPolicajca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajStanicu.resx">
+      <DependentUpon>FormDodajStanicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIzmeniObjekat.resx">
+      <DependentUpon>FormIzmeniObjekat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIzmeniPolicajca.resx">
+      <DependentUpon>FormIzmeniPolicajca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIzmeniStanicu.resx">
+      <DependentUpon>FormIzmeniStanicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIzmeniZamenika.resx">
+      <DependentUpon>FormIzmeniZamenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKorisnik.resx">
+      <DependentUpon>FormKorisnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormObjekat.resx">
+      <DependentUpon>FormObjekat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormObjekatTehLice.resx">
+      <DependentUpon>FormObjekatTehLice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPolicijskaStanica.resx">
+      <DependentUpon>FormPolicijskaStanica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTehLiceDodaj.resx">
+      <DependentUpon>FormTehLiceDodaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUprava.resx">
+      <DependentUpon>FormUprava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,6 +273,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -185,6 +300,30 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\police2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\AdminMode.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\police_station.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\stanicaa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Policajac.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\TehhnickoLice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pooolicajac2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\polyam.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

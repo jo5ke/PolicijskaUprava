@@ -26,7 +26,7 @@ namespace PolicijskaUprava.Mapiranja
 			References(x => x.PripadaUpravi).Column("ID_UPRAVA").LazyLoad().Not.Insert()   // <- added this
    .Not.Update();
 
-            HasMany(x => x.Vozila).KeyColumn("ID_STANICE_VOZILA").LazyLoad().Cascade.All().Inverse();
+            HasMany(x => x.Vozila).KeyColumn("ID_STANICE").LazyLoad().Cascade.All().Inverse();
             HasMany(x => x.Objekti).KeyColumn("ID_STANICE_OBJEKTA").LazyLoad().Cascade.All().Inverse();
             HasMany(x => x.Policajci).KeyColumn("ID_STANICE").LazyLoad().Cascade.All().Inverse();
             // HasOne(x => x.SefStanice).PropertyRef(x => x.PolicijskaStanicaSefa);

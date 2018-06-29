@@ -8,10 +8,11 @@ namespace PolicijskaUprava.Entiteti
 {
 	public class Ulica
 	{
-		public virtual int ID_Policajca { get; set; }
-		public virtual string Ulica_naziv { get; set; }
+        public virtual int ID { get; set; }
+		//public virtual int ID_Policajca { get; set; }
+		public virtual string Naziv { get; set; }
 
-		public virtual Policajac PozornikUlice { get; set; }
+		public virtual Pozornik PozornikUlice { get; set; }
 
 		public Ulica()
 		{

@@ -21,7 +21,7 @@ namespace PolicijskaUprava.Mapiranja
 			//            .KeyReference(x => x.Serijski_br_alarma, "SERIJSKI_BR_ALARMA");
 
 			Map(x => x.Ime).Column("IME");
-			References(x => x.Serijski_br_alarma).Column("SERIJSKI_BR");
+			References(x => x.Serijski_br_alarma).Column("SERIJSKI_BR_ALARMA").LazyLoad();
 
 
 		}

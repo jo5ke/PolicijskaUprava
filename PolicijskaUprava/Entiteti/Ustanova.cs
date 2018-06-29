@@ -23,6 +23,10 @@ namespace PolicijskaUprava.Entiteti
 		{
 			return Naziv_ustanove;
 		}
+        public virtual string vratiNaziv()
+        {
+            return Naziv_ustanove;
+        }
 	}
 }
 

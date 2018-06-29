@@ -14,13 +14,14 @@ namespace PolicijskaUprava.Mapiranja
         {
             Table("ULICA");
 
-			Id(x => x.ID_Policajca, "ID").GeneratedBy.TriggerIdentity();
+			Id(x => x.ID, "ID").GeneratedBy.Increment();
 
-			Map(x => x.Ulica_naziv, "ULICA_NAZIV");
+			Map(x => x.Naziv, "NAZIV");
 
-			References(x => x.PozornikUlice).Column("ID_POLICAJCA");
-            
+            References(x => x.PozornikUlice).Column("ID_POLICAJCA").LazyLoad();
 
-        }
-    }
+            //HasMany(x => x.PozornikUlice).KeyColumn("ID_STANICE_OBJEKTA").LazyLoad().Cascade.All().Inverse();
+
+
+        }    }
 }
