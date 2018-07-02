@@ -1248,7 +1248,7 @@ namespace PolicijskaUprava
 				ISession s = DataLayer.GetSession();
 
 				TehnickoLice tl = s.Query<TehnickoLice>()
-					.Where(po => po.ID == id).Select(o => o).FirstOrDefault();
+					.Where(po => po.Id == id).Select(o => o).FirstOrDefault();
 
 				if (p.Ime != null)
 					tl.Ime = p.Ime;
@@ -1793,7 +1793,7 @@ namespace PolicijskaUprava
 												.Select(p => p);
 			IList<ToplotniView> sistemiView = new List<ToplotniView>();
 
-			foreach (AlarmniSistem o in sistemi)
+			foreach (Toplotni o in sistemi)
 			{
 				sistemiView.Add(new ToplotniView(o));
 			}
