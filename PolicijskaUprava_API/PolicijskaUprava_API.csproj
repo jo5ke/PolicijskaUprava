@@ -206,11 +206,20 @@
     <Compile Include="Controllers\AlarmniSistemController.cs" />
     <Compile Include="Controllers\CinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OstaliController.cs" />
     <Compile Include="Controllers\PatrolaController.cs" />
+    <Compile Include="Controllers\PokretniController.cs" />
     <Compile Include="Controllers\PolicajacController.cs" />
     <Compile Include="Controllers\PolicijskaStanicaController.cs" />
+    <Compile Include="Controllers\SkolaController.cs" />
+    <Compile Include="Controllers\SkolskiController.cs" />
+    <Compile Include="Controllers\ToplotniController.cs" />
+    <Compile Include="Controllers\UlicaController.cs" />
+    <Compile Include="Controllers\UltrazvucniController.cs" />
     <Compile Include="Controllers\UpravaController.cs" />
+    <Compile Include="Controllers\UstanovaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VanredneSituacijeController.cs" />
     <Compile Include="Controllers\VoziloController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

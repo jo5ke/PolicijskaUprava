@@ -92,7 +92,14 @@
     <Compile Include="DTOs\PatrolaView.cs" />
     <Compile Include="DTOs\PolicajacView.cs" />
     <Compile Include="DTOs\PolicijskaStanicaView.cs" />
+    <Compile Include="DTOs\PozornikView.cs" />
+    <Compile Include="DTOs\SkolaView.cs" />
+    <Compile Include="DTOs\SkolskiView.cs" />
+    <Compile Include="DTOs\TehnickoLiceView.cs" />
+    <Compile Include="DTOs\UlicaView.cs" />
     <Compile Include="DTOs\UpravaView.cs" />
+    <Compile Include="DTOs\UstanovaView.cs" />
+    <Compile Include="DTOs\VanredneSituacijeView.cs" />
     <Compile Include="DTOs\VoziloView.cs" />
     <Compile Include="Entiteti\AlarmniSistem.cs" />
     <Compile Include="Entiteti\Cin.cs" />

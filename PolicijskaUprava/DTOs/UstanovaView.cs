@@ -7,28 +7,29 @@ using PolicijskaUprava.Entiteti;
 
 namespace PolicijskaUprava.DTOs
 {
-	public class CinView
+	public class UstanovaView
 	{
 		public int ID { get; set; }
-		public string Naziv_cina { get; set; }
+		public string Naziv_ustanove { get; set; }
+		public string Tip { get; set; }
 		public IList<PolicajacView> Policajci { get; set; }
 
-		public CinView()
+		public UstanovaView()
 		{
 
 		}
 
-		public CinView(Cin c)
+		public UstanovaView(Ustanova u)
 		{
 			this.Policajci = new List<PolicajacView>();
-			this.ID = c.ID;
-			this.Naziv_cina = c.Naziv_cina;
+			this.ID = u.ID;
+			this.Naziv_ustanove = u.Naziv_ustanove;
+			this.Tip = u.Tip;
 			
-			foreach(Policajac p in c.Policajci)
+			foreach(Policajac p in u.Policajci)
 			{
 				this.Policajci.Add(new PolicajacView(p));
 			}
-
 		}
 	}
 }

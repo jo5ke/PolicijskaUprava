@@ -7,23 +7,26 @@ using PolicijskaUprava.Entiteti;
 
 namespace PolicijskaUprava.DTOs
 {
-	public class OstaliView : PolicajacView
+	public class VanredneSituacijeView : PolicajacView
 	{
-		//public virtual Patrola PatrolaVodje { get; set; }
+		public string Naziv_vestine { get; set; }
+		public string Kurs { get; set; }
+		public DateTime Datum_kursa { get; set; }
+		public string Sertifikat { get; set; }
+		public DateTime Datum_sertifikata { get; set; }
 
-		//public virtual Patrola RadiU { get; set; }
-		public int RadiU { get; set; }
-
-
-		public OstaliView()
+		public VanredneSituacijeView()
 		{
 
 		}
 
-		public OstaliView(Ostali p)
+		public VanredneSituacijeView(VanredneSituacije p)
 		{
-			if (p.RadiU != null)
-				this.RadiU = p.RadiU.Redni_br;
+			this.Naziv_vestine = p.Naziv_vestine;
+			this.Kurs = p.Kurs;
+			this.Datum_kursa = p.Datum_kursa;
+			this.Sertifikat = p.Sertifikat;
+			this.Datum_sertifikata = p.Datum_sertifikata;
 
 			//Policajac
 			this.ID = p.ID;

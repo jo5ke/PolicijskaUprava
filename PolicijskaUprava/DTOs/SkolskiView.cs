@@ -7,23 +7,20 @@ using PolicijskaUprava.Entiteti;
 
 namespace PolicijskaUprava.DTOs
 {
-	public class OstaliView : PolicajacView
+	public class SkolskiView : PolicajacView
 	{
-		//public virtual Patrola PatrolaVodje { get; set; }
+		//public virtual Skola RadiUSkoli { get; set; }
+		public int RadiUSkoli { get; set; }
 
-		//public virtual Patrola RadiU { get; set; }
-		public int RadiU { get; set; }
-
-
-		public OstaliView()
+		public SkolskiView()
 		{
 
 		}
 
-		public OstaliView(Ostali p)
+		public SkolskiView(Skolski p)
 		{
-			if (p.RadiU != null)
-				this.RadiU = p.RadiU.Redni_br;
+			if (p.RadiUSkoli != null)
+				this.RadiUSkoli = p.RadiUSkoli.ID;
 
 			//Policajac
 			this.ID = p.ID;
@@ -53,6 +50,7 @@ namespace PolicijskaUprava.DTOs
 				this.PolicijskaStanicaSefa = p.PolicijskaStanicaSefa.ID;
 			if (p.ImaCin != null)
 				this.ImaCin = p.ImaCin.ID;
+
 		}
 	}
 }
